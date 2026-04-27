@@ -57,4 +57,12 @@ public class Pilha<E> {
 		// TODO
 		return null;
 	}
+
+	public void print(){
+		Pilha<E> aux = topo;
+		while(aux != fundo){
+			System.out.println(aux.getItem);
+			aux=aux.getProximo;
+		}
+	}
 }

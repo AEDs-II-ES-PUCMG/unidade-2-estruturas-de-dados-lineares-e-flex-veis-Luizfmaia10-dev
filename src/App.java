@@ -163,6 +163,15 @@ public class App {
         
         System.out.println(mensagem);
     }
+
+    public static void PilhaMatricula(){
+        Integer[] mat= {1,2,5,8,3,3,3};
+        Pilha<Integer> matricula = new Pilha<>();
+        for(int i=0;i<mat.length;i++){
+            matricula.empilhar(mat[i]);
+        }
+        matricula.print();
+    }
     
     /** Lista todos os produtos cadastrados, numerados, um por linha */
     static void listarTodosOsProdutos() {
