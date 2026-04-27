@@ -59,10 +59,10 @@ public class Pilha<E> {
 	}
 
 	public void print(){
-		Pilha<E> aux = topo;
+		Celula<E> aux = topo;
 		while(aux != fundo){
-			System.out.println(aux.getItem);
-			aux=aux.getProximo;
+			System.out.println(aux.getItem());
+			aux=aux.getProximo();
 		}
 	}
 }
