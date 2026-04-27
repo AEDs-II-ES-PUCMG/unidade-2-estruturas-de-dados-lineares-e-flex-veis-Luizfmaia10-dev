@@ -164,6 +164,13 @@ public class App {
         System.out.println(mensagem);
     }
 
+    public static void PilhaProdutosRecentes(){
+        Pilha<Integer> pa = new Pilha<>();
+        for(int i =0;i<produtosCadastrados.length;i++){
+            
+        }
+    }
+
     public static void PilhaMatricula(){
         Integer[] mat= {1,2,5,8,3,3,3};
         Pilha<Integer> matricula = new Pilha<>();
