@@ -188,6 +188,8 @@ public class App {
         }
         matricula.print();
     }
+
+
     
     /** Lista todos os produtos cadastrados, numerados, um por linha */
     static void listarTodosOsProdutos() {
@@ -211,8 +213,10 @@ public class App {
     	Produto produto;
     	int numProdutos;
     	int quantidade;
-    	
     	listarTodosOsProdutos();
+        Fila <Character> filaProduto = new Fila<>();
+
+
     	System.out.println("Incluindo produtos no pedido...");
     	numProdutos = lerOpcao("Quantos produtos serão incluídos no pedido?", Integer.class);
         for (int i = 0; i < numProdutos; i++) {
@@ -234,27 +238,29 @@ public class App {
      * @param pedido O pedido que deve ser finalizado.
      */
     public static void finalizarPedido(Pedido pedido) {
-    	
+    	pilhaPedidos.empilhar(pedido);
+        filaPedidos.enfileirar(pedido);
     	// TODO
+        for(ItemDePedido item : pedido.getItensDoPedido()){
+            pilhaProdutosRecentes.empilhar(item.getProduto());
+        }
     }
     
     public static void listarProdutosPedidosRecentes() {
-    	
+    	pilhaProdutos
     	// TODO
     }
     
 	public static void main(String[] args) {
 		
 		teclado = new Scanner(System.in, Charset.forName("UTF-8"));
-        filaNome();
-        /** 
+        filaNome(); 
 		nomeArquivoDados = "produtos.txt";
         produtosCadastrados = lerProdutos(nomeArquivoDados);
         
         Pedido pedido = null;
         
         int opcao = -1;
-      
         do{
             opcao = menu();
             switch (opcao) {
@@ -269,6 +275,6 @@ public class App {
         }while(opcao != 0);       
 
         teclado.close();  
-        */  
+        
     }
 }
