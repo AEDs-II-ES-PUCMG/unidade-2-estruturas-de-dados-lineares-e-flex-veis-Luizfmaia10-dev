@@ -127,6 +127,15 @@ public class App {
         
         return produto;   
     }
+
+    public static void filaNome(){
+        Fila <Character> filaNome = new Fila<>();
+        Character[] nome= {'L','U','I','Z','M','A','I','A'};
+        for(int i=0;i<nome.length;i++){
+            filaNome.enfileirar(nome[i]);
+        }
+        System.out.println(filaNome.ocorencias('A'));
+    }
     
     /** Localiza um produto no vetor de produtos cadastrados, a partir do nome de produto informado pelo usuário, e o retorna. 
      *  A busca não é sensível ao caso. Em caso de não encontrar o produto, retorna null
@@ -237,7 +246,8 @@ public class App {
 	public static void main(String[] args) {
 		
 		teclado = new Scanner(System.in, Charset.forName("UTF-8"));
-        
+        filaNome();
+        /** 
 		nomeArquivoDados = "produtos.txt";
         produtosCadastrados = lerProdutos(nomeArquivoDados);
         
@@ -258,6 +268,7 @@ public class App {
             pausa();
         }while(opcao != 0);       
 
-        teclado.close();    
+        teclado.close();  
+        */  
     }
 }
